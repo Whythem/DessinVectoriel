@@ -28,4 +28,6 @@ add_executable(Project main.cpp
         Forms/Carre.cpp
         Forms/Carre.h
         Forms/CarreS.cpp
-        Forms/CarreS.h)
+        Forms/CarreS.h
+        Formes.cpp
+        Formes.h)

@@ -127,6 +127,12 @@ build CMakeFiles/Project.dir/Forms/CarreS.cpp.obj: CXX_COMPILER__Project_unscann
   OBJECT_DIR = CMakeFiles\Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Project.dir\Forms
 
+build CMakeFiles/Project.dir/Formes.cpp.obj: CXX_COMPILER__Project_unscanned_Debug C$:/Users/mathi/Document/Cours/COO/Project/Formes.cpp || cmake_object_order_depends_target_Project
+  DEP_FILE = CMakeFiles\Project.dir\Formes.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Project
@@ -135,7 +141,7 @@ build CMakeFiles/Project.dir/Forms/CarreS.cpp.obj: CXX_COMPILER__Project_unscann
 #############################################
 # Link the executable Project.exe
 
-build Project.exe: CXX_EXECUTABLE_LINKER__Project_Debug CMakeFiles/Project.dir/main.cpp.obj CMakeFiles/Project.dir/Format/CBitmap.cpp.obj CMakeFiles/Project.dir/Image/CImage.cpp.obj CMakeFiles/Project.dir/Image/CLigne.cpp.obj CMakeFiles/Project.dir/Image/CPixel.cpp.obj CMakeFiles/Project.dir/Forms/Point.cpp.obj CMakeFiles/Project.dir/Forms/Ligne.cpp.obj CMakeFiles/Project.dir/Forms/Cercle.cpp.obj CMakeFiles/Project.dir/Forms/CercleS.cpp.obj CMakeFiles/Project.dir/Forms/Rectangle.cpp.obj CMakeFiles/Project.dir/Forms/RectangleS.cpp.obj CMakeFiles/Project.dir/Forms/Carre.cpp.obj CMakeFiles/Project.dir/Forms/CarreS.cpp.obj
+build Project.exe: CXX_EXECUTABLE_LINKER__Project_Debug CMakeFiles/Project.dir/main.cpp.obj CMakeFiles/Project.dir/Format/CBitmap.cpp.obj CMakeFiles/Project.dir/Image/CImage.cpp.obj CMakeFiles/Project.dir/Image/CLigne.cpp.obj CMakeFiles/Project.dir/Image/CPixel.cpp.obj CMakeFiles/Project.dir/Forms/Point.cpp.obj CMakeFiles/Project.dir/Forms/Ligne.cpp.obj CMakeFiles/Project.dir/Forms/Cercle.cpp.obj CMakeFiles/Project.dir/Forms/CercleS.cpp.obj CMakeFiles/Project.dir/Forms/Rectangle.cpp.obj CMakeFiles/Project.dir/Forms/RectangleS.cpp.obj CMakeFiles/Project.dir/Forms/Carre.cpp.obj CMakeFiles/Project.dir/Forms/CarreS.cpp.obj CMakeFiles/Project.dir/Formes.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Project.dir

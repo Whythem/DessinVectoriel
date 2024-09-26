@@ -21,6 +21,7 @@ class Point {
         Point(int x, int y, int z, std::string couleur, int transparence);
         Point(int x, int y, std::string couleur, int transparence);
         ~Point();
+
 };
 
 
