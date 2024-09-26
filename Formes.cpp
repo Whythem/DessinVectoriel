@@ -5,7 +5,7 @@
 #include <fstream>
 #include "Formes.h"
 
-Formes::Formes(std::string vectorFile, int zoom, std::string nameFileBmp) {
+Formes::Formes(std::string vectorFile, std::string nameFileBmp, float zoom) {
     this->zoom = zoom;
     this->nameFileBmp = nameFileBmp;
 }

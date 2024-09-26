@@ -9,12 +9,12 @@
 
 class Formes {
     private:
-        int zoom;
+        float zoom;
         std::string nameFileBmp;
     protected:
 
     public:
-        Formes(std::string vectorFile, int zoom, std::string nameFileBmp);
+        Formes(std::string vectorFile, std::string nameFileBmp, float zoom = 1);
         void getBmpFile();
         ~Formes();
 };
