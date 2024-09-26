@@ -15,6 +15,7 @@ class RectangleS : public Rectangle {
 
     public:
        RectangleS(int x, int y, int longueur, int largeur, std::string couleur, std::string couleurInterieur, int transparence, int z = 0);
+        void draw(CImage* image);
         ~RectangleS();
 };
 

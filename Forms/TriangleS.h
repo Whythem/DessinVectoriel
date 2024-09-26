@@ -14,6 +14,7 @@ class TriangleS: public Triangle{
 
     public:
         TriangleS(int x, int y, int x2, int y2, int x3, int y3, std::string couleur, std::string couleurInterieur, int transparence, int z = 0);
+        void draw(CImage* image);
         ~TriangleS();
 };
 

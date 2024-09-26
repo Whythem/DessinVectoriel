@@ -15,6 +15,7 @@ class CercleS: public Cercle {
 
     public:
         CercleS(int x, int y, int rayon, std::string couleur, std::string couleurInterieur, int transparence, int z = 0);
+        void draw(CImage* image);
         ~CercleS();
 };
 

@@ -16,6 +16,7 @@ class Ligne: public Point {
 
     public:
       Ligne(int x, int y, int Xbis, int Ybis, std::string couleur, int transparence, int z = 0);
+      void draw(CImage* image);
       ~Ligne();
 };
 

@@ -123,6 +123,7 @@ void Formes::readVectorFile(std::string vectorFile) {
 
                 this->formes.push_back(new CercleS(x, y, rayon, couleur, couleurInterieur, transparence, z));
             }
+            //TODO ADD TRIANGLE
         }
         fichier.close();
     } else {
@@ -136,9 +137,28 @@ void Formes::orderForms() {
     });
 }
 
-
 void Formes::getBmpFile() {
-    CBitmap bmpFile = CBitmap();
+    int imgWidth = 800;
+    int imgHeight = 600;
+
+    // //Save BMP request that bmp already created
+    // ofstream createBmp(this->nameFileBmp);
+    // createBmp.close();
+
+    CImage* image = new CImage(imgWidth, imgHeight);
+
+    CBitmap bmp = CBitmap();
+
+    bmp.setImage(image);
+
+    for (Point* forme : this->formes) {
+        std::cout << forme << "\n";
+        forme->draw(image);
+    }
+
+    bmp.SaveBMP(this->nameFileBmp);
+
+    delete image;
 }
 
 Formes::~Formes() {

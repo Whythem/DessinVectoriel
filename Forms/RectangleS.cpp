@@ -9,6 +9,10 @@ RectangleS::RectangleS(int x, int y, int longueur, int largeur, std::string coul
     this->couleurInterieur = couleurInterieur;
 }
 
+void RectangleS::draw(CImage* image) {
+
+};
+
 RectangleS::~RectangleS() {
 
 }

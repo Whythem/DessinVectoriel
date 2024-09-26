@@ -9,6 +9,10 @@ CercleS::CercleS(int x, int y, int rayon, std::string couleur, std::string coule
     this->couleurInterieur = couleurInterieur;
 }
 
+void CercleS::draw(CImage* image) {
+
+};
+
 CercleS::~CercleS() {
 
 }

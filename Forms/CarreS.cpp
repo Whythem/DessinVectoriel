@@ -9,6 +9,10 @@ CarreS::CarreS(int x, int y, int cote, std::string couleur, std::string couleurI
 
 }
 
+void CarreS::draw(CImage* image) {
+
+};
+
 CarreS::~CarreS() {
 
 }

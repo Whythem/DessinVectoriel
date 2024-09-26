@@ -11,6 +11,10 @@ Triangle::Triangle(int x, int y, int x2, int y2, int x3, int y3, std::string cou
     this->y3 = y3;
 }
 
+void Triangle::draw(CImage* image) {
+
+};
+
 Triangle::~Triangle() {
 
 }

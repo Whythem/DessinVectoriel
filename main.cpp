@@ -24,5 +24,7 @@ int main(int argc, char* argv[]) {
     // You can now use these parameters as needed in your program.
     Formes DessinVectoriel = Formes(fichier_initial, fichier_final, echelle);
 
+    DessinVectoriel.getBmpFile();
+
     return 0;
 }

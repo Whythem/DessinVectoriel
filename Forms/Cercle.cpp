@@ -9,6 +9,10 @@ Cercle::Cercle(int x, int y, int rayon, std::string couleur, int transparence, i
     this->rayon = rayon;
 };
 
+void Cercle::draw(CImage* image) {
+
+};
+
 Cercle::~Cercle() {
 
 };

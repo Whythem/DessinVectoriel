@@ -13,7 +13,6 @@ class Formes {
         std::vector<Point*> formes;
         float zoom;
         std::string nameFileBmp;
-    protected:
 
     public:
         Formes(std::string vectorFile, std::string nameFileBmp, float zoom = 1);

@@ -10,6 +10,8 @@ Rectangle::Rectangle(int x, int y, int longueur, int largeur, std::string couleu
     this->largeur = largeur;
 }
 
+void Rectangle::draw(CImage* image) {}
+
 Rectangle::~Rectangle() {
 
 }

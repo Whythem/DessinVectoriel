@@ -7,6 +7,8 @@
 
 #include <string>
 
+#include "../Image/CImage.h"
+
 class Point {
     private:
 
@@ -19,7 +21,8 @@ class Point {
 
     public:
         Point(int x, int y, std::string couleur, int transparence, int z = 0);
-        int getZ() ;
+        int getZ();
+        void draw(CImage* image);
         ~Point();
 
 };
