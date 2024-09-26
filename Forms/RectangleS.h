@@ -5,10 +5,18 @@
 #ifndef RECTANGLES_H
 #define RECTANGLES_H
 
+#include "Rectangle.h"
 
+class RectangleS : public Rectangle {
+    private:
 
-class RectangleS {
+    protected:
+        std::string couleurInterieur;
 
+    public:
+        RectangleS(int x, int y, int z, int longueur, int largeur, std::string couleur, std::string couleurInterieur, int transparence);
+        RectangleS(int x, int y, int longueur, int largeur, std::string couleur, std::string couleurInterieur, int transparence);
+        ~RectangleS();
 };
 
 

@@ -24,4 +24,8 @@ add_executable(Project main.cpp
         Forms/Rectangle.cpp
         Forms/RectangleS.h
         Forms/RectangleS.cpp
-        Forms/Point.h)
+        Forms/Point.h
+        Forms/Carre.cpp
+        Forms/Carre.h
+        Forms/CarreS.cpp
+        Forms/CarreS.h)

@@ -9,9 +9,9 @@
 
 class CercleS: public Cercle {
     private:
-        std::string couleurInterieur;
 
     protected:
+       std::string couleurInterieur;
 
     public:
         CercleS(int x, int y, int rayon, int z, std::string couleur, std::string couleurInterieur, int transparence);
