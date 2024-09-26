@@ -9,8 +9,8 @@
 
 class Ligne: public Point {
     private:
-      int: Xbis;
-      int: Ybis;
+      int Xbis;
+      int Ybis;
 
     protected:
 

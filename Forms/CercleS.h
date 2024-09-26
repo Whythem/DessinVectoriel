@@ -9,7 +9,7 @@
 
 class CercleS: public Cercle {
     private:
-        std::string: couleurInterieur;
+        std::string couleurInterieur;
 
     protected:
 

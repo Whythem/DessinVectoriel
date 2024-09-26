@@ -11,8 +11,8 @@ class Rectangle: public Point {
     private:
 
     protected:
-        int: longueur;
-        int: largeur;
+        int longueur;
+        int largeur;
 
     public:
         

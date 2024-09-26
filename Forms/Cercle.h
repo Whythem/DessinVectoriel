@@ -11,7 +11,7 @@ class Cercle: public Point {
     private:
 
     protected:
-      int: rayon;
+      int rayon;
 
     public:
       Cercle(int x, int y, int rayon, int z, std::string couleur, int transparence);

@@ -6,12 +6,12 @@
 
 using namespace std;
 
-Ligne::Ligne(int x, int y, int Xbis, int Ybis, int z, std::string couleur, int transparence) : Point(int x, int y, int z, string couleur, int transparence) {
+Ligne::Ligne(int x, int y, int Xbis, int Ybis, int z, std::string couleur, int transparence) : Point(x, y, z, couleur, transparence) {
     this->Xbis = Xbis;
     this->Ybis = Ybis;
 };
 
-Ligne::Ligne(int x, int y, int Xbis, int Ybis, std::string couleur, int transparence) : Point(int x, int y, string couleur, int transparence) {
+Ligne::Ligne(int x, int y, int Xbis, int Ybis, std::string couleur, int transparence) : Point(x, y, couleur, transparence) {
     this->Xbis = Xbis;
     this->Ybis = Ybis;
 };

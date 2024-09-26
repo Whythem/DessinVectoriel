@@ -5,15 +5,17 @@
 #ifndef POINT_H
 #define POINT_H
 
+#include <string>
+
 class Point {
     private:
 
     protected:
-        int: x;
-        int: y;
-        int: z;
-        std::string: couleur;
-        int: transparence;
+        int x;
+        int y;
+        int z;
+        std::string couleur;
+        int transparence;
 
     public:
         Point(int x, int y, int z, std::string couleur, int transparence);
