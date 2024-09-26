@@ -18,8 +18,8 @@ class Point {
         int transparence;
 
     public:
-        Point(int x, int y, int z, std::string couleur, int transparence);
-        Point(int x, int y, std::string couleur, int transparence);
+        Point(int x, int y, std::string couleur, int transparence, int z = 0);
+        int getZ() ;
         ~Point();
 
 };

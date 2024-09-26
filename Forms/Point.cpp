@@ -6,7 +6,8 @@
 
 using namespace std;
 
-Point :: Point(int x, int y, int z, string couleur, int transparence) {
+
+Point :: Point(int x, int y, string couleur, int transparence, int z) {
     this->x = x;
     this->y = y;
     this->z = z;
@@ -14,13 +15,9 @@ Point :: Point(int x, int y, int z, string couleur, int transparence) {
     this->transparence = transparence;
 };
 
-Point :: Point(int x, int y, string couleur, int transparence) {
-    this->x = x;
-    this->y = y;
-    this->z = 0;
-    this->couleur = couleur;
-    this->transparence = transparence;
-};
+int Point::getZ() {
+    return this->z;
+}
 
 Point :: ~Point() {
 

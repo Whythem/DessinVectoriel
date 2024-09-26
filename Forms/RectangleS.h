@@ -14,8 +14,7 @@ class RectangleS : public Rectangle {
         std::string couleurInterieur;
 
     public:
-        RectangleS(int x, int y, int z, int longueur, int largeur, std::string couleur, std::string couleurInterieur, int transparence);
-        RectangleS(int x, int y, int longueur, int largeur, std::string couleur, std::string couleurInterieur, int transparence);
+       RectangleS(int x, int y, int longueur, int largeur, std::string couleur, std::string couleurInterieur, int transparence, int z = 0);
         ~RectangleS();
 };
 

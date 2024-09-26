@@ -17,6 +17,9 @@ int main(int argc, char* argv[]) {
         echelle = std::stof(argv[3]);
     }
 
+    std::cout << "Fichier initial: " << fichier_initial << std::endl;
+    std::cout << "Fichier final: " << fichier_final << std::endl;
+    std::cout << "Echelle: " << echelle << std::endl;
 
     // You can now use these parameters as needed in your program.
     Formes DessinVectoriel = Formes(fichier_initial, fichier_final, echelle);

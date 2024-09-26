@@ -14,8 +14,7 @@ class CercleS: public Cercle {
        std::string couleurInterieur;
 
     public:
-        CercleS(int x, int y, int rayon, int z, std::string couleur, std::string couleurInterieur, int transparence);
-        CercleS(int x, int y, int rayon, std::string couleur, std::string couleurInterieur, int transparence);
+        CercleS(int x, int y, int rayon, std::string couleur, std::string couleurInterieur, int transparence, int z = 0);
         ~CercleS();
 };
 

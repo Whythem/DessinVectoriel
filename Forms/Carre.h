@@ -13,8 +13,7 @@ class Carre : public Rectangle {
     protected:
 
     public:
-        Carre(int x, int y, int cote, int z, std::string couleur, int transparence);
-        Carre(int x, int y, int cote, std::string couleur, int transparence);
+        Carre(int x, int y, int cote, std::string couleur, int transparence, int z = 0);
         ~Carre();
 };
 

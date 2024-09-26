@@ -14,8 +14,7 @@ class Cercle: public Point {
       int rayon;
 
     public:
-      Cercle(int x, int y, int rayon, int z, std::string couleur, int transparence);
-      Cercle(int x, int y, int rayon, std::string couleur, int transparence);
+      Cercle(int x, int y, int rayon, std::string couleur, int transparence, int z = 0);
       ~Cercle();
 };
 

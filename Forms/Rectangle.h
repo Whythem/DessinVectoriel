@@ -15,8 +15,7 @@ class Rectangle: public Point {
         int largeur;
 
     public:
-        Rectangle(int x, int y, int z, int longueur, int largeur, std::string couleur, int transparence);
-        Rectangle(int x, int y, int longueur, int largeur, std::string couleur, int transparence);
+        Rectangle(int x, int y, int longueur, int largeur, std::string couleur, int transparence, int z = 0);
         ~Rectangle();
         
 };

@@ -4,12 +4,8 @@
 
 #include "Rectangle.h"
 
-Rectangle::Rectangle(int x, int y, int z, int longueur, int largeur, std::string couleur, int transparence) : Point(x, y, z, couleur, transparence) {
-    this->longueur = longueur;
-    this->largeur = largeur;
-}
 
-Rectangle::Rectangle(int x, int y, int longueur, int largeur, std::string couleur, int transparence) : Point(x, y, couleur, transparence) {
+Rectangle::Rectangle(int x, int y, int longueur, int largeur, std::string couleur, int transparence, int z) : Point(x, y, couleur, transparence, z) {
     this->longueur = longueur;
     this->largeur = largeur;
 }

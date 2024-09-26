@@ -4,11 +4,8 @@
 
 #include "CercleS.h"
 
-CercleS::CercleS(int x, int y, int rayon, int z, std::string couleur, std::string couleurInterieur, int transparence) : Cercle(x, y, rayon, z, couleur, transparence) {
-    this->couleurInterieur = couleurInterieur;
-}
 
-CercleS::CercleS(int x, int y, int rayon, std::string couleur, std::string couleurInterieur, int transparence) : Cercle(x, y, rayon, couleur, transparence) {
+CercleS::CercleS(int x, int y, int rayon, std::string couleur, std::string couleurInterieur, int transparence, int z) : Cercle(x, y, rayon, couleur, transparence, z) {
     this->couleurInterieur = couleurInterieur;
 }
 

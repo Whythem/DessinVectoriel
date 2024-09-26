@@ -15,8 +15,7 @@ class Ligne: public Point {
     protected:
 
     public:
-      Ligne(int x, int y, int Xbis, int Ybis, int z, std::string couleur, int transparence);
-      Ligne(int x, int y, int Xbis, int Ybis, std::string couleur, int transparence);
+      Ligne(int x, int y, int Xbis, int Ybis, std::string couleur, int transparence, int z = 0);
       ~Ligne();
 };
 
