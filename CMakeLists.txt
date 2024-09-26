@@ -32,4 +32,6 @@ add_executable(Project main.cpp
         Formes.cpp
         Formes.h
         Forms/Triangle.cpp
-        Forms/Triangle.h)
+        Forms/Triangle.h
+        Forms/TriangleS.cpp
+        Forms/TriangleS.h)
