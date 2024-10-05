@@ -21,11 +21,10 @@ int Point::getZ() {
 
 void Point::draw(CImage* image) {
     if (x >= 0 && x < image->getLigne(0)->size() && y >= 0 && y < image->size()) {
-        // Get the pixel at (x, y)
         CPixel* pixel = image->getPixel(x, y);
 
-        // Set the pixel to red (255, 0, 0)
-        pixel->RGB(255, 0, 0);  // Red color
+        //TODO Gérer couleur
+        pixel->RGB(255, 255, 255);
     }
 }
 

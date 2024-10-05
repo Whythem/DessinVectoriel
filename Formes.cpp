@@ -141,10 +141,6 @@ void Formes::getBmpFile() {
     int imgWidth = 800;
     int imgHeight = 600;
 
-    // //Save BMP request that bmp already created
-    // ofstream createBmp(this->nameFileBmp);
-    // createBmp.close();
-
     CImage* image = new CImage(imgWidth, imgHeight);
 
     CBitmap bmp = CBitmap();

@@ -13,37 +13,35 @@ Ligne::Ligne(int x, int y, int Xbis, int Ybis, std::string couleur, int transpar
 };
 
 void Ligne::draw(CImage* image) {
-    int dx = abs(Xbis - x);
-    int dy = abs(Ybis - y);
-    int sx = (x < Xbis) ? 1 : -1;
-    int sy = (y < Ybis) ? 1 : -1;
-    int err = dx - dy;
+    int lengthX = abs(Xbis - x);
+    int lengthY = abs(Ybis - y);
+    int axeX = x < Xbis ? 1 : -1;
+    int axeY = y < Ybis ? 1 : -1;
 
-    int currX = x;
-    int currY = y;
+    int pente = lengthX - lengthY;
+
+    int currentX = x;
+    int currentY = y;
 
     while (true) {
-        // Check if the current point is within bounds of the image
-        if (currX >= 0 && currX < image->getLigne(0)->size() && currY >= 0 && currY < image->size()) {
-            // Get the pixel at the current point (currX, currY)
-            CPixel* pixel = image->getPixel(currX, currY);
-            // Set the pixel color to red (for now, using red as default)
-            pixel->RGB(255, 0, 0);  // Red color
+        std::cout << currentX << "," << currentY << std::endl;
+        CPixel* pixel = image->getPixel(currentX, currentY);
+
+        //TODO Gérer couleur
+        pixel->RGB(255, 255, 255);
+
+        if (currentX == Xbis && currentY == Ybis) break;
+
+        int pente2 = 2 * pente;
+
+        if (pente2 > -lengthY) {
+            pente -= lengthY;
+            currentX += axeX;
         }
 
-        // If the current point is the end point, break
-        if (currX == Xbis && currY == Ybis) {
-            break;
-        }
-
-        int e2 = 2 * err;
-        if (e2 > -dy) {
-            err -= dy;
-            currX += sx;
-        }
-        if (e2 < dx) {
-            err += dx;
-            currY += sy;
+        if (pente2 < lengthX) {
+            pente += lengthX;
+            currentY += axeY;
         }
     }
 }
