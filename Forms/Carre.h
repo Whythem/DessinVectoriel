@@ -14,7 +14,6 @@ class Carre : public Rectangle {
 
     public:
         Carre(int x, int y, int cote, std::string couleur, int transparence, int z = 0);
-        void draw(CImage* image);
         ~Carre();
 };
 

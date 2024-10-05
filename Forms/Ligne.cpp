@@ -24,7 +24,6 @@ void Ligne::draw(CImage* image) {
     int currentY = y;
 
     while (true) {
-        std::cout << currentX << "," << currentY << std::endl;
         CPixel* pixel = image->getPixel(currentX, currentY);
 
         //TODO Gérer couleur

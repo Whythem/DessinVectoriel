@@ -9,7 +9,9 @@ TriangleS::TriangleS(int x, int y, int x2, int y2, int x3, int y3, std::string c
 }
 
 void TriangleS::draw(CImage* image) {
+    Triangle::draw(image);
 
+    //TODO set couleurInterieur
 };
 
 TriangleS::~TriangleS() {

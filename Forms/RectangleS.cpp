@@ -10,7 +10,19 @@ RectangleS::RectangleS(int x, int y, int longueur, int largeur, std::string coul
 }
 
 void RectangleS::draw(CImage* image) {
+    Rectangle::draw(image);
 
+    int x2 = x + longueur;
+    int y2 = y + largeur;
+
+    for (int i = x + 1; i < x2; ++i) {
+        for (int j = y + 1; j < y2; ++j) {
+            CPixel* pixel = image->getPixel(i, j);
+
+            //TODO gerer couleur
+            pixel->RGB(255, 0, 0);
+        }
+    }
 };
 
 RectangleS::~RectangleS() {

@@ -15,7 +15,7 @@ class Cercle: public Point {
 
     public:
       Cercle(int x, int y, int rayon, std::string couleur, int transparence, int z = 0);
-      void draw(CImage* image);
+      virtual void draw(CImage* image);
       ~Cercle();
 };
 

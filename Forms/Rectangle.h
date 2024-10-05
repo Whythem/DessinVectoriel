@@ -16,7 +16,7 @@ class Rectangle: public Point {
 
     public:
         Rectangle(int x, int y, int longueur, int largeur, std::string couleur, int transparence, int z = 0);
-        void draw(CImage* image);
+        virtual void draw(CImage* image);
         ~Rectangle();
         
 };

@@ -9,10 +9,6 @@ Carre::Carre(int x, int y, int cote, std::string couleur, int transparence, int 
 
 }
 
-void Carre::draw(CImage* image) {
-
-};
-
 Carre::~Carre() {
 
 }

@@ -21,6 +21,8 @@
 #include "Forms/Rectangle.h"
 #include "Forms/RectangleS.h"
 #include "Forms/Ligne.h"
+#include "Forms/Triangle.h"
+#include "Forms/TriangleS.h"
 
 Formes::Formes(std::string vectorFile, std::string nameFileBmp, float zoom) {
     readVectorFile(vectorFile);
@@ -93,6 +95,16 @@ void Formes::readVectorFile(std::string vectorFile) {
 
                 this->formes.push_back(new Cercle(x, y, rayon, couleur, transparence, z));
             }
+            else if (typeForme == "TRIANGLE") {
+                int x1, y1, x2, y2, x3, y3;
+                std::string couleur;
+                int transparence, z;
+
+                char vir;
+                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> x3 >> vir >> y3 >> vir >> couleur >> vir >> transparence >> vir >> z;
+
+                this->formes.push_back(new Triangle(x1, y1, x2, y2, x3, y3, couleur, transparence, z));
+            }
             else if (typeForme == "RECTANGLES") {
                 int x, y, longueur, largeur;
                 std::string couleur, couleurInterieur;
@@ -122,8 +134,17 @@ void Formes::readVectorFile(std::string vectorFile) {
                 paramStream >> x >> vir >> y >> vir >> rayon >> vir >> couleur >> couleurInterieur >> vir >> transparence >> vir >> z;
 
                 this->formes.push_back(new CercleS(x, y, rayon, couleur, couleurInterieur, transparence, z));
+            } else if (typeForme == "TRIANGLES") {
+                int x1, y1, x2, y2, x3, y3;
+                std::string couleur, couleurInterieur;
+                int transparence, z;
+
+                char vir;
+                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> x3 >> vir >> y3 >> vir >> couleur >> vir >> couleurInterieur >> vir >> transparence >> vir >> z;
+
+                this->formes.push_back(new TriangleS(x1, y1, x2, y2, x3, y3, couleur, couleurInterieur, transparence, z));
             }
-            //TODO ADD TRIANGLE
+
         }
         fichier.close();
     } else {

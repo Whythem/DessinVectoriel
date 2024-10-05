@@ -15,7 +15,7 @@ class Triangle: public Point{
 
   public:
     Triangle(int x, int y, int x2, int y2, int x3, int y3, std::string couleur, int transparence, int z = 0);
-    void draw(CImage* image);
+    virtual void draw(CImage* image);
     ~Triangle();
 };
 
