@@ -22,7 +22,7 @@ class Point {
     public:
         Point(int x, int y, std::string couleur, int transparence, int z = 0);
         int getZ();
-        void draw(CImage* image);
+        virtual void draw(CImage* image);
         ~Point();
 
 };
