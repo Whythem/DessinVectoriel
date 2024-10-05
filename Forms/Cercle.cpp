@@ -25,35 +25,35 @@ void Cercle::draw(CImage* image) {
     auto setPixelSymmetry = [&](int x, int y) {
         if (x0 + x >= 0 && x0 + x < image->getLigne(0)->size() &&
             y0 + y >= 0 && y0 + y < image->size()) {
-            image->getPixel(x0 + x, y0 + y)->RGB(255, 0, 0);  // Set red color
+            image->getPixel(x0 + x, y0 + y)->RGB(255, 255, 255);  // Set red color
         }
         if (x0 - x >= 0 && x0 - x < image->getLigne(0)->size() &&
             y0 + y >= 0 && y0 + y < image->size()) {
-            image->getPixel(x0 - x, y0 + y)->RGB(255, 0, 0);
+            image->getPixel(x0 - x, y0 + y)->RGB(255, 255, 255);
         }
         if (x0 + x >= 0 && x0 + x < image->getLigne(0)->size() &&
             y0 - y >= 0 && y0 - y < image->size()) {
-            image->getPixel(x0 + x, y0 - y)->RGB(255, 0, 0);
+            image->getPixel(x0 + x, y0 - y)->RGB(255, 255, 255);
         }
         if (x0 - x >= 0 && x0 - x < image->getLigne(0)->size() &&
             y0 - y >= 0 && y0 - y < image->size()) {
-            image->getPixel(x0 - x, y0 - y)->RGB(255, 0, 0);
+            image->getPixel(x0 - x, y0 - y)->RGB(255, 255, 255);
         }
         if (x0 + y >= 0 && x0 + y < image->getLigne(0)->size() &&
             y0 + x >= 0 && y0 + x < image->size()) {
-            image->getPixel(x0 + y, y0 + x)->RGB(255, 0, 0);
+            image->getPixel(x0 + y, y0 + x)->RGB(255, 255, 255);
         }
         if (x0 - y >= 0 && x0 - y < image->getLigne(0)->size() &&
             y0 + x >= 0 && y0 + x < image->size()) {
-            image->getPixel(x0 - y, y0 + x)->RGB(255, 0, 0);
+            image->getPixel(x0 - y, y0 + x)->RGB(255, 255, 255);
         }
         if (x0 + y >= 0 && x0 + y < image->getLigne(0)->size() &&
             y0 - x >= 0 && y0 - x < image->size()) {
-            image->getPixel(x0 + y, y0 - x)->RGB(255, 0, 0);
+            image->getPixel(x0 + y, y0 - x)->RGB(255, 255, 255);
         }
         if (x0 - y >= 0 && x0 - y < image->getLigne(0)->size() &&
             y0 - x >= 0 && y0 - x < image->size()) {
-            image->getPixel(x0 - y, y0 - x)->RGB(255, 0, 0);
+            image->getPixel(x0 - y, y0 - x)->RGB(255, 255, 255);
         }
     };
 
