@@ -51,7 +51,9 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;  // Pour lire les virgules
-                paramStream >> x >> vir >> y >> vir >> couleur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new Point(x, y, couleur, transparence, z));
             }
@@ -61,7 +63,9 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> couleur >> vir >> transparence >> vir >> z;
+                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new Ligne(x1, y1, x2, y2, couleur, transparence, z));
             }
@@ -71,7 +75,9 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x >> vir >> y >> vir >> longueur >> vir >> largeur >> vir >> couleur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir >> longueur >> vir >> largeur >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                paramStream>> transparence >> vir >> z;
 
                 this->formes.push_back(new Rectangle(x, y, longueur, largeur, couleur, transparence, z));
             }
@@ -81,7 +87,9 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x >> vir >> y >> vir >> cote >> vir >> couleur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir >> cote >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new Carre(x, y, cote, couleur, transparence, z));
             }
@@ -91,7 +99,9 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x >> vir >> y >> vir >> rayon >> vir >> couleur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir >> rayon >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new Cercle(x, y, rayon, couleur, transparence, z));
             }
@@ -101,7 +111,9 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> x3 >> vir >> y3 >> vir >> couleur >> vir >> transparence >> vir >> z;
+                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> x3 >> vir >> y3 >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new Triangle(x1, y1, x2, y2, x3, y3, couleur, transparence, z));
             }
@@ -111,7 +123,10 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x >> vir >> y >> vir >> longueur >> vir >> largeur >> vir >> couleur >> vir >> couleurInterieur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir >> longueur >> vir >> largeur >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                std::getline(paramStream >> std::ws, couleurInterieur, ',');
+                paramStream>> transparence >> vir >> z;
 
                 this->formes.push_back(new RectangleS(x, y, longueur, largeur, couleur, couleurInterieur, transparence, z));
             }
@@ -121,7 +136,10 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x >> vir >> y >> vir >> cote >> vir >> couleur >> couleurInterieur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir >> cote >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                std::getline(paramStream >> std::ws, couleurInterieur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new CarreS(x, y, cote, couleur, couleurInterieur, transparence, z));
             }
@@ -131,7 +149,10 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x >> vir >> y >> vir >> rayon >> vir >> couleur >> couleurInterieur >> vir >> transparence >> vir >> z;
+                paramStream >> x >> vir >> y >> vir >> rayon >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                std::getline(paramStream >> std::ws, couleurInterieur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new CercleS(x, y, rayon, couleur, couleurInterieur, transparence, z));
             } else if (typeForme == "TRIANGLES") {
@@ -140,7 +161,10 @@ void Formes::readVectorFile(std::string vectorFile) {
                 int transparence, z;
 
                 char vir;
-                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> x3 >> vir >> y3 >> vir >> couleur >> vir >> couleurInterieur >> vir >> transparence >> vir >> z;
+                paramStream >> x1 >> vir >> y1 >> vir >> x2 >> vir >> y2 >> vir >> x3 >> vir >> y3 >> vir;
+                std::getline(paramStream >> std::ws, couleur, ',');
+                std::getline(paramStream >> std::ws, couleurInterieur, ',');
+                paramStream >> transparence >> vir >> z;
 
                 this->formes.push_back(new TriangleS(x1, y1, x2, y2, x3, y3, couleur, couleurInterieur, transparence, z));
             }
@@ -169,7 +193,7 @@ void Formes::getBmpFile() {
     bmp.setImage(image);
 
     for (Point* forme : this->formes) {
-        std::cout << forme << "\n";
+        std::cout << forme->transparence << "\n";
         forme->draw(image);
     }
 

@@ -23,7 +23,7 @@ void CercleS::draw(CImage* image) {
                 int dy = j - y0;
                 if (dx * dx + dy * dy <= r * r) {
                     CPixel* pixel = image->getPixel(i, j);
-                    pixel->RGB(255, 0, 0);
+                    this->colorPixel(pixel, couleur, transparence);
                 }
             }
         }

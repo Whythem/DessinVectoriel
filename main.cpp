@@ -23,6 +23,8 @@ int main(int argc, char* argv[]) {
 
     Formes DessinVectoriel = Formes(fichier_initial, fichier_final, echelle);
 
+    DessinVectoriel.orderForms();
+
     DessinVectoriel.getBmpFile();
 
     return 0;

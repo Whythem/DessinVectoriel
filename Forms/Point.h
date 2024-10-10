@@ -17,14 +17,14 @@ class Point {
         int y;
         int z;
         std::string couleur;
-        int transparence;
 
     public:
+        int transparence;
         Point(int x, int y, std::string couleur, int transparence, int z = 0);
         int getZ();
         virtual void draw(CImage* image);
+        void colorPixel(CPixel* pixel, std::string couleur, int transparence);
         ~Point();
-
 };
 
 

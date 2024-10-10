@@ -9,7 +9,7 @@ TriangleS::TriangleS(int x, int y, int x2, int y2, int x3, int y3, std::string c
 }
 
 void TriangleS::draw(CImage* image) {
-    //TODO set couleurInterieur
+
     int x1 = x, y1 = y;
     int x2 = this->x2, y2 = this->y2;
     int x3 = this->x3, y3 = this->y3;
@@ -44,7 +44,7 @@ void TriangleS::draw(CImage* image) {
             if (x >= 0 && x < image->getLigne(0)->size() &&
                 y >= 0 && y < image->size()) {
                 CPixel* pixel = image->getPixel(x, y);
-                pixel->RGB(255, 0, 0);
+                this->colorPixel(pixel, couleur, transparence);
                 }
         }
     }

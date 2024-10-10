@@ -26,8 +26,7 @@ void Ligne::draw(CImage* image) {
     while (true) {
         CPixel* pixel = image->getPixel(currentX, currentY);
 
-        //TODO Gérer couleur
-        pixel->RGB(255, 255, 255);
+        this->colorPixel(pixel, couleur, transparence);
 
         if (currentX == Xbis && currentY == Ybis) break;
 

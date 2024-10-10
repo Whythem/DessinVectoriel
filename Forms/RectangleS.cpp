@@ -19,8 +19,7 @@ void RectangleS::draw(CImage* image) {
         for (int j = y + 1; j < y2; ++j) {
             CPixel* pixel = image->getPixel(i, j);
 
-            //TODO gerer couleur
-            pixel->RGB(255, 0, 0);
+            this->colorPixel(pixel, couleur, transparence);
         }
     }
 };
