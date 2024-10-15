@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     std::cout << "Fichier final: " << fichier_final << std::endl;
     std::cout << "Echelle: " << echelle << std::endl;
 
-    Formes DessinVectoriel = Formes(fichier_initial, fichier_final, 2);
+    Formes DessinVectoriel = Formes(fichier_initial, fichier_final, echelle);
 
     DessinVectoriel.getBmpFile();
 

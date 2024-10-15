@@ -24,7 +24,7 @@
 #include "Forms/Triangle.h"
 #include "Forms/TriangleS.h"
 
-Formes::Formes(std::string vectorFile, std::string nameFileBmp, int zoom) {
+Formes::Formes(std::string vectorFile, std::string nameFileBmp, float zoom) {
     this->zoom = zoom;
     this->nameFileBmp = nameFileBmp;
     readVectorFile(vectorFile);
