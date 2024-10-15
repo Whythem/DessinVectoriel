@@ -24,10 +24,10 @@
 #include "Forms/Triangle.h"
 #include "Forms/TriangleS.h"
 
-Formes::Formes(std::string vectorFile, std::string nameFileBmp, float zoom) {
-    readVectorFile(vectorFile);
+Formes::Formes(std::string vectorFile, std::string nameFileBmp, int zoom) {
     this->zoom = zoom;
     this->nameFileBmp = nameFileBmp;
+    readVectorFile(vectorFile);
     orderForms();
 }
 
@@ -41,7 +41,6 @@ void Formes::readVectorFile(std::string vectorFile) {
             std::string typeForme;
             std::getline(ss, typeForme, ':');
 
-
             std::string parametres;
             std::getline(ss, parametres);
             std::stringstream paramStream(parametres);
@@ -54,8 +53,11 @@ void Formes::readVectorFile(std::string vectorFile) {
                 paramStream >> x >> vir >> y >> vir;
                 std::getline(paramStream >> std::ws, couleur, ',');
                 paramStream >> transparence >> vir >> z;
-
-                this->formes.push_back(new Point(x, y, couleur, transparence, z));
+                if (zoom >= 0.5 && zoom <=1.5) {
+                    this->formes.push_back(new Point((int)(x * zoom), (int)(y * zoom), couleur, transparence, z));
+                } else if (zoom > 1.5) {
+                    this->formes.push_back(new CarreS((int)(x * zoom), (int)(y * zoom), (int)zoom, couleur, couleur, transparence, z));
+                }
             }
             else if (typeForme == "LIGNE") {
                 int x1, y1, x2, y2;
@@ -67,7 +69,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new Ligne(x1, y1, x2, y2, couleur, transparence, z));
+                this->formes.push_back(new Ligne((int)(x1 * zoom), (int)(y1 * zoom), (int)(x2 * zoom), (int)(y2 * zoom), couleur, transparence, z));
             }
             else if (typeForme == "RECTANGLE") {
                 int x, y, longueur, largeur;
@@ -79,7 +81,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleur, ',');
                 paramStream>> transparence >> vir >> z;
 
-                this->formes.push_back(new Rectangle(x, y, longueur, largeur, couleur, transparence, z));
+                this->formes.push_back(new Rectangle((int)(x * zoom), (int)(y * zoom), (int)(longueur * zoom), (int)(largeur * zoom), couleur, transparence, z));
             }
             else if (typeForme == "CARRE") {
                 int x, y, cote;
@@ -91,7 +93,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new Carre(x, y, cote, couleur, transparence, z));
+                this->formes.push_back(new Carre((int)(x * zoom), (int)(y * zoom), (int)(cote * zoom), couleur, transparence, z));
             }
             else if (typeForme == "CERCLE") {
                 int x, y, rayon;
@@ -103,7 +105,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new Cercle(x, y, rayon, couleur, transparence, z));
+                this->formes.push_back(new Cercle((int)(x * zoom), (int)(y * zoom), (int)(rayon * zoom), couleur, transparence, z));
             }
             else if (typeForme == "TRIANGLE") {
                 int x1, y1, x2, y2, x3, y3;
@@ -115,7 +117,36 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new Triangle(x1, y1, x2, y2, x3, y3, couleur, transparence, z));
+                if (zoom == 1) {
+                    this->formes.push_back(new Triangle(x1, y1, x2, y2, x3, y3, couleur, transparence, z));
+                } else {
+                    int recX, recY;
+                    float axeX2, axeY2, axeX3, axeY3;
+                    if (x2 > x3) {
+                        recX = x2;
+                    } else {
+                        recX = x3;
+                    }
+                    if (y2 > y3) {
+                        recY = y2;
+                    } else {
+                        recY = y3;
+                    }
+
+                    axeX2 = (x2 - x1) / (recX - x1);
+                    axeX3 = (x3 - x1) / (recX - x1);
+                    axeY2 = (y2 - y1) / (recY - y1);
+                    axeY3 = (y3 - y1) / (recY - y1);
+                    recX = (int)(recX * zoom);
+                    recY = (int)(recY * zoom);
+                    x1 = (int)(x1 * zoom);
+                    y1 = (int)(y1 * zoom);
+                    x2 = (int)((axeX2 * recX) + x1);
+                    y2 = (int)((axeY2 * recY) + y1);
+                    x3 = (int)((axeX3 * recX) + x1);
+                    y3 = (int)((axeY3 * recY) + y1);
+                    this->formes.push_back(new Triangle(x1, y1, x2, y2, x3, y3, couleur, transparence, z));
+                }
             }
             else if (typeForme == "RECTANGLES") {
                 int x, y, longueur, largeur;
@@ -128,7 +159,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleurInterieur, ',');
                 paramStream>> transparence >> vir >> z;
 
-                this->formes.push_back(new RectangleS(x, y, longueur, largeur, couleur, couleurInterieur, transparence, z));
+                this->formes.push_back(new RectangleS((int)(x * zoom), (int)(y * zoom), (int)(longueur * zoom), (int)(largeur * zoom), couleur, couleurInterieur, transparence, z));
             }
             else if (typeForme == "CARRES") {
                 int x, y, cote;
@@ -141,7 +172,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleurInterieur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new CarreS(x, y, cote, couleur, couleurInterieur, transparence, z));
+                this->formes.push_back(new CarreS((int)(x * zoom), (int)(y * zoom), (int)(cote * zoom), couleur, couleurInterieur, transparence, z));
             }
             else if (typeForme == "CERCLES") {
                 int x, y, rayon;
@@ -154,7 +185,7 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleurInterieur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new CercleS(x, y, rayon, couleur, couleurInterieur, transparence, z));
+                this->formes.push_back(new CercleS((int)(x * zoom), (int)(y * zoom), (int)(rayon * zoom), couleur, couleurInterieur, transparence, z));
             } else if (typeForme == "TRIANGLES") {
                 int x1, y1, x2, y2, x3, y3;
                 std::string couleur, couleurInterieur;
@@ -166,7 +197,36 @@ void Formes::readVectorFile(std::string vectorFile) {
                 std::getline(paramStream >> std::ws, couleurInterieur, ',');
                 paramStream >> transparence >> vir >> z;
 
-                this->formes.push_back(new TriangleS(x1, y1, x2, y2, x3, y3, couleur, couleurInterieur, transparence, z));
+                if (zoom == 1) {
+                    this->formes.push_back(new TriangleS(x1, y1, x2, y2, x3, y3, couleur, couleurInterieur, transparence, z));
+                } else {
+                    int recX, recY;
+                    float axeX2, axeY2, axeX3, axeY3;
+                    if (x2 > x3) {
+                        recX = x2;
+                    } else {
+                        recX = x3;
+                    }
+                    if (y2 > y3) {
+                        recY = y2;
+                    } else {
+                        recY = y3;
+                    }
+
+                    axeX2 = (x2 - x1) / (recX - x1);
+                    axeX3 = (x3 - x1) / (recX - x1);
+                    axeY2 = (y2 - y1) / (recY - y1);
+                    axeY3 = (y3 - y1) / (recY - y1);
+                    recX = (int)(recX * zoom);
+                    recY = (int)(recY * zoom);
+                    x1 = (int)(x1 * zoom);
+                    y1 = (int)(y1 * zoom);
+                    x2 = (int)((axeX2 * recX) + x1);
+                    y2 = (int)((axeY2 * recY) + y1);
+                    x3 = (int)((axeX3 * recX) + x1);
+                    y3 = (int)((axeY3 * recY) + y1);
+                    this->formes.push_back(new TriangleS(x1, y1, x2, y2, x3, y3, couleur, couleurInterieur, transparence, z));
+                }
             }
 
         }
@@ -183,8 +243,8 @@ void Formes::orderForms() {
 }
 
 void Formes::getBmpFile() {
-    int imgWidth = 800;
-    int imgHeight = 600;
+    int imgWidth = (int)(400 * zoom);
+    int imgHeight = (int)(400 * zoom);
 
     CImage* image = new CImage(imgWidth, imgHeight);
 
@@ -193,7 +253,6 @@ void Formes::getBmpFile() {
     bmp.setImage(image);
 
     for (Point* forme : this->formes) {
-        std::cout << forme->transparence << "\n";
         forme->draw(image);
     }
 

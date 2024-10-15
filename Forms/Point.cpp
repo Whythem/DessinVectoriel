@@ -40,7 +40,15 @@ void Point::colorPixel(CPixel *pixel, std::string couleur, int transparence) {
         newGreen = 255;
         newRed = 0;
         newBlue = 0;
-    } else {
+    } else if (couleur == "GOLD") {
+        newRed = 255;
+        newGreen = 215;
+        newBlue = 0;
+    } else if (couleur == "PURPLE") {
+        newRed = 128;
+        newGreen = 0;
+        newBlue = 128;
+    }else {
         newRed = 255;
         newBlue = 255;
         newGreen = 255;

@@ -11,11 +11,11 @@
 class Formes {
     private:
         std::vector<Point*> formes;
-        float zoom;
+        int zoom;
         std::string nameFileBmp;
 
     public:
-        Formes(std::string vectorFile, std::string nameFileBmp, float zoom = 1);
+        Formes(std::string vectorFile, std::string nameFileBmp, int zoom = 2);
         void readVectorFile(std::string vectorFile);
         void orderForms();
         void getBmpFile();
